@@ -5,11 +5,22 @@
 <title>GlowraBot</title>
 <h1>GlowraBot</h1>
 <p>GlowraBot, Glowra kozmetik fiyat karşılaştırma uygulaması için herkese açık ürün sayfalarından fiyat, stok ve barkod bilgisi toplayan bir tarayıcıdır.</p>
+<h2>Topladığı bilgiler</h2>
+<p>Ürün adı, marka, barkod, fiyat, kart fiyatı, stok durumu, sitede varsa ton kodu ile ürün sayfasının ve görselinin adresi.</p>
+<p>Ürün fotoğraflarını kopyalamaz; ürün açıklamalarını ve yorumları toplamaz. Glowra satış yapmaz; kullanıcıyı mağazanın kendi ürün sayfasına yönlendirir.</p>
+<h2>Çalışma kuralları</h2>
 <ul>
 <li>robots.txt kurallarına uyar.</li>
 <li>Alan adı başına saniyede en fazla 1 istek gönderir.</li>
-<li>HTTP 403 aldığında o site için durur.</li>
-<li>Giriş yapmaz, sepet ve ödeme sayfalarına girmez.</li>
+<li>HTTP 429 ve 5xx yanıtlarında bekler; art arda 429 alırsa o taramayı bitirir.</li>
+<li>HTTP 403 aldığında o site için durur. Bot korumalarını aşmaya çalışmaz.</li>
+<li>Giriş yapmaz; sepet, ödeme, arama ve filtre sayfalarına girmez.</li>
 </ul>
-<p>Taramanın durdurulmasını istemek veya sorun bildirmek için: <a href="https://github.com/glowra-bot/glowra-bot.github.io/issues">https://github.com/glowra-bot/glowra-bot.github.io/issues</a></p>
+<h2>Mağazalarla ilişki</h2>
+<p>Glowra, fiyatlarını gösterdiği mağazaların hiçbiriyle bağlantılı değildir. Mağaza adları yalnızca fiyatın kaynağını belirtmek için kullanılır.</p>
+<h2>Taramayı azaltma veya durdurma</h2>
+<p>Sitenizin taranmasını robots.txt ile engelleyebilirsiniz:</p>
+<pre>User-agent: GlowraBot
+Disallow: /</pre>
+<p>Bize yazarsanız taramayı azaltırız veya durdururuz: <a href="https://github.com/glowra-bot/glowra-bot.github.io/issues">https://github.com/glowra-bot/glowra-bot.github.io/issues</a></p>
 </html>
